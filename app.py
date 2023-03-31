@@ -20,5 +20,5 @@ def handle_webhook():
     return render_template('ticket.html', issue_id=issue_id, issue_title=issue_title, issue_description=issue_description)
 
 
-app.run(debug=True, port=f"0.0.0.0:{os.environ.get('PORT', 5000)}")
+app.run(debug=True, port=os.environ.get('PORT', 5000))
 
