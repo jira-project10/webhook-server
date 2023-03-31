@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import os
 
 app = Flask(__name__)
 
@@ -18,5 +19,6 @@ def handle_webhook():
     #return '', 200
     return render_template('ticket.html', issue_id=issue_id, issue_title=issue_title, issue_description=issue_description)
 
-if __name__ == 'main':
-    app.run(debug=True, port="0.0.0.0:$PORT")
+
+app.run(debug=True, port=f"0.0.0.0:{os.environ.get('PORT', 5000)}")
+
