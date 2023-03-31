@@ -17,7 +17,8 @@ def handle_webhook():
     # Process the new ticket here, e.g. send a notification to Slack
     print(f"New ticket created: ID {issue_id}, Title: {issue_title}, Description: {issue_description}")
     #return '', 200
-    return render_template('ticket.html', issue_id=issue_id, issue_title=issue_title, issue_description=issue_description)
+    return 'ticket created'
+    #return render_template('ticket.html', issue_id=issue_id, issue_title=issue_title, issue_description=issue_description)
 
 
 app.run(debug=True, port=os.environ.get('PORT', 5000))
