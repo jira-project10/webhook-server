@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return 'Hello World!'
 
-@app.route('/webhook1', methods=['POST'],['GET'])
+@app.route('/webhook1', methods=['POST','GET'])
 def handle_webhook():
     data = request.json
     issue_id = data['issue']['id']
