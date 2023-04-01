@@ -14,9 +14,9 @@ def handle_webhook():
     issue_title = data['issue']['fields']['summary']
     issue_description = data['issue']['fields']['description']
 
-    app.logger.info('%s logged in successfully', issue_id)
-    app.logger.info('%s logged in successfully',issue_title)
-    app.logger.info('%s logged in successfully', issue_description)
+    app.logger.info('issue id=%s', issue_id)
+    app.logger.info('issue title=%s',issue_title)
+    app.logger.info('issue description=%s', issue_description)
 
     # Process the new ticket here, e.g. send a notification to Slack
     #print(f"New ticket created: ID {issue_id}, Title: {issue_title}, Description: {issue_description}")
