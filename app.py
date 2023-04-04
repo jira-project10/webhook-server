@@ -23,7 +23,7 @@ def handle_webhook():
     issue_title = data['issue']['fields']['summary']
     issue_description = data['issue']['fields']['description']
     
-    app.loggger.info(data)
+    app.logger.info(data)
     app.logger.info('issue id=%s', issue_id)
     app.logger.info('issue title=%s',issue_title)
     app.logger.info('issue description=%s', issue_description)
