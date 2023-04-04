@@ -9,7 +9,7 @@ cnx = mysql.connector.connect(
     user='admin',
     password='company_project10',
     host='database-2.ced1eyf8wcxc.us-east-2.rds.amazonaws.com',
-    database='database-2'
+    database='tickets'
 )
 
 @app.route('/', methods=['GET'])
