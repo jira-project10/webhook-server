@@ -20,18 +20,18 @@ def index():
 def handle_webhook():
     data = request.json
     issue_id = data['issue']['id']
-    issue_title = data['issue']['fields']['summary']
+    issue_summary = data['issue']['fields']['summary']
     issue_description = data['issue']['fields']['description']
     
     app.logger.info(data)
     app.logger.info('issue id=%s', issue_id)
-    app.logger.info('issue title=%s',issue_title)
+    app.logger.info('issue summary=%s',issue_summary)
     app.logger.info('issue description=%s', issue_description)
 
     # Insert the new ticket data into the database
     cursor = cnx.cursor()
-    insert_query = "INSERT INTO tickets (id, title, description) VALUES (%s, %s, %s)"
-    insert_values = (issue_id, issue_title, issue_description)
+    insert_query = "INSERT INTO tickets (id, summary, description) VALUES (%s, %s, %s)"
+    insert_values = (issue_id, issue_summary, issue_description)
     cursor.execute(insert_query, insert_values)
     cnx.commit()
     cursor.close()
