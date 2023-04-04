@@ -8,7 +8,7 @@ app = Flask(__name__)
 cnx = mysql.connector.connect(
     user='admin',
     password='company_project10',
-    host='1.ced1eyf8wcxc.us-east-2.rds.amazonaws.com',
+    host='database-1.ced1eyf8wcxc',
     database='database-1'
 )
 
