@@ -8,8 +8,8 @@ app = Flask(__name__)
 cnx = mysql.connector.connect(
     user='admin',
     password='company_project10',
-    host='database-1.ced1eyf8wcxc.us-east-2.rds.amazonaws.com',
-    database='database-1'
+    host='database-2.ced1eyf8wcxc.us-east-2.rds.amazonaws.com',
+    database='database-2'
 )
 
 @app.route('/', methods=['GET'])
